@@ -70,7 +70,8 @@ document.addEventListener("DOMContentLoaded", () => {
 			var currentSpaceElement = document.getElementById(String(currentIndex));
 			if (currentSpaceElement.textContent == randomLetters[i-1]) {
 				//element has green background
-				currentSpaceElement.style.backgroundColor = "green";
+                currentSpaceElement.style.backgroundColor = "#538d4e";
+                document.getElementById(currentArray[i - 1]).style.backgroundColor = "#538d4e";
 
 				//keep track of this for duplicates
 				//number of number of letters guessed & number of letter appearances in actual combination
@@ -101,12 +102,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 				if (appearances[guessIndex] > 0 && appearances[guessIndex] >= guesses[guessIndex]) {
-					currentSpaceElement.style.backgroundColor = "#ffff00";
+                    currentSpaceElement.style.backgroundColor = "#b59f3b";
+                    if (document.getElementById(currentArray[i - 1]).style.backgroundColor != "rgb(83, 141, 78)") {
+                        console.log(document.getElementById(currentArray[i - 1]).style.backgroundColor);
+                        document.getElementById(currentArray[i - 1]).style.backgroundColor = "#b59f3b";
+                    }
 				}
 				else {
-                    currentSpaceElement.style.backgroundColor = "rgb(129, 131, 132)";
+                    currentSpaceElement.style.backgroundColor = "#3a3a3c";
                     //darken color of keys not used (need previous array)
-                    document.getElementById(currentArray[i-1]).style.backgroundColor = "#3a3a3c";
+                    if (document.getElementById(currentArray[i - 1]).style.backgroundColor != "rgb(181, 159, 59)" && document.getElementById(currentArray[i - 1]).style.backgroundColor != "rgb(83, 141, 78)") {
+                        document.getElementById(currentArray[i - 1]).style.backgroundColor = "#3a3a3c";
+                    }
 				}
 				guesses[guessIndex] = guesses[guessIndex] - 1;
 			}
@@ -175,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 <div id="header-container">
-    <h1>
+    <h1 style="font-family: Arial, Helvetica, sans-serif;">
         <button id="instructions"
                 style="font-family:  Arial, Helvetica, sans-serif;
                 font-weight: bold;
@@ -185,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 height: 58px;
                 cursor: pointer;
                 background-color: rgb(129, 131, 132);
-                color: rgb(215, 218, 220);
+                color: #ffffff;
                 flex-grow: 1;
                 text-transform: uppercase;
                 margin-right: 6px;
@@ -198,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
     Randle
     </h1>
         <br>
-        <hr />
+        <hr>
         <br>
         <br>
     </div>
@@ -223,7 +230,7 @@ display: none;
   height: 58px;
   cursor: pointer;
   background-color: rgb(129, 131, 132);
-  color: rgb(215, 218, 220);
+  color: #ffffff;
   flex-grow: 1;
   text-transform: uppercase;
   margin-right: 6px;
@@ -234,8 +241,8 @@ display: none;
                 Close
             </button>
         </div>
-        <h2 style="font-weight: bold; font-size: 35px;"> Randle (Random Letter Wordle) </h2>
-        <p style="font-size: 15px;">
+        <h2 style="font-weight: bold; font-size: 35px; font-family: Arial, Helvetica, sans-serif"> Randle (Random Letter Wordle) </h2>
+        <p style="font-size: 15px; font-family: Arial, Helvetica, sans-serif;">
             Randle is a game based off Wordle where you try to guess a random combination of 5 letters in 7 tries.
             <br>
             <br>
@@ -245,13 +252,14 @@ display: none;
             After each guess, the color of the tiles will change to show how close your guess was to the correct combination.
             <br>
             <br>
-            <h3 style="font-weight: bold; text-align: left; font-size: 35px;">
+            <h3 style="font-weight: bold; text-align: left; font-size: 35px; font-family: Arial, Helvetica, sans-serif;">
                 Example:
             </h3>
             <br>
             <img src="example.PNG" alt="Example of Tile Colors">
             <br>
-            <br>
+        </p>
+        <p style="font-size: 15px; font-family: Arial, Helvetica, sans-serif;">
             <br>
             Grey tiles indicate that the letter in that tile is not in the correct combination of letters.
             <br>

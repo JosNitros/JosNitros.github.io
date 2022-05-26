@@ -6,7 +6,7 @@ body {
 }
 
 hr {
-    border: 2px #ffffff dashed;
+    border: 2px #3a3a3c solid;
 }
 
 nav {
@@ -59,11 +59,12 @@ a {
     min-height: 60px;
     font-size: 50px;
     font-weight: bold;
-    color: gainsboro;
+    color: #ffffff;
     text-transform: uppercase;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .keyboard-row {
@@ -83,7 +84,7 @@ a {
         height: 58px;
         cursor: pointer;
         background-color: rgb(129, 131, 132);
-        color: rgb(215, 218, 220);
+        color: #ffffff;
         flex-grow: 1;
         text-transform: uppercase;
         margin-right: 6px;
